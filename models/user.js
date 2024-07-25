@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const applicatonSchema = new mongoose.Schema(
   {
-    comapny: String,
+    company: { type: String, required: true },
     title: String,
     status: {
       type: String,
-      enum: ["interested", "applied", "interviewing", "rejected", "accepted"],
+      enum: ["interested", "applied", "interviewing", "rejected", "accepted"], // it has to be one of these (security things)
     },
     data: Date,
     notes: String,
